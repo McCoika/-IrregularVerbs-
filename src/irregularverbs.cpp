@@ -1,8 +1,8 @@
 #include <conio.h>
-#include <iostream>
 #include <ctime>
-#include <stdlib.h>
 #include <fstream>
+#include <iostream>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -47,10 +47,10 @@ void test1() {
     }
   }
   file.open(path);
-      if (file.is_open())
-          cout << "1";
-      else
-          cout << "0";
+  if (file.is_open())
+    cout << "1";
+  else
+    cout << "0";
 }
 
 void test2() { system("cls"); }

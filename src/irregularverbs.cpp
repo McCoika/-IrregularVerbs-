@@ -16,7 +16,33 @@ void teorinf() { system("cls"); }
 
 void verbtable() { system("cls"); }
 
-void test1() { system("cls"); }
+void test1() {
+  system("cls");
+  setlocale(LC_ALL, "ru");
+  srand(time(NULL));
+
+  string path = "dictionary.txt";
+  string words, word, answer;
+  int nomera[10], i, x = 1, j, flag, errors[10], vopr = 0;
+  bool t = true;
+
+  ifstream file;
+  nomera[0] = rand() % 109 + 1;
+  for (i = 1; i < 10; i++) {
+    t = true;
+    while (t) {
+      flag = 0;
+      nomera[i] = rand() % 109 + 1;
+      for (j = 0; j < i; j++) {
+        if (nomera[i] == nomera[j])
+          flag++;
+      }
+
+      if (flag == 0)
+        t = false;
+    }
+  }
+}
 
 void test2() { system("cls"); }
 
@@ -27,7 +53,7 @@ int main() {
   setlocale(LC_ALL, "Russian");
   startmenu();
   while (close == false) {
-      
+
     if (_kbhit()) {
       switch (_getch()) {
       case '1':

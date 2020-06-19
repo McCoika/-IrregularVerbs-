@@ -3,3 +3,5 @@ run: ./build/src/irregularverbs.o
 
 ./build/src/irregularverbs.o: ./src/irregularverbs.cpp
 	g++ -std=c++17 -c -o ./build/src/irregularverbs.o ./src/irregularverbs.cpp -lm
+clean:
+	rm -rf ./build/src/.o ./build/test/.o

@@ -1,5 +1,9 @@
 #include <conio.h>
 #include <iostream>
+#include <ctime>
+#include <stdlib.h>
+#include <fstream>
+
 using namespace std;
 
 void startmenu() {
@@ -21,7 +25,7 @@ void test1() {
   setlocale(LC_ALL, "ru");
   srand(time(NULL));
 
-  string path = "dictionary.txt";
+  string path = "..\\txtfile\\dictionary.txt";
   string words, word, answer;
   int nomera[10], i, x = 1, j, flag, errors[10], vopr = 0;
   bool t = true;
@@ -42,6 +46,11 @@ void test1() {
         t = false;
     }
   }
+  file.open(path);
+      if (file.is_open())
+          cout << "1";
+      else
+          cout << "0";
 }
 
 void test2() { system("cls"); }

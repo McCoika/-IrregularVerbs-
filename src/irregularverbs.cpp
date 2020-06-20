@@ -121,6 +121,38 @@ void test2() {
         t = false;
     }
   }
+  cout << "¬вод производитс€ с маленькой буквы." << endl;
+  for (i = 0; i < 10; i++) {
+    file.open(path);
+    while (x <= nomera[i]) {
+      words = "";
+      getline(file, words);
+      x++;
+    }
+    x = 1;
+    j = 0;
+    while (words[j] != ' ') {
+      j++;
+    }
+    poin = j;
+    j++;
+    while (j <= words.length()) {
+      word += words[j];
+      j++;
+    }
+    cout << "¬ведите инфинитив глагола, который имеет данные формы: " << word
+         << endl;
+    cin >> answer;
+    words.erase(poin);
+    if (answer == words)
+      errors[vopr] = 1;
+    else
+      errors[vopr] = 0;
+    vopr++;
+    word = "";
+    poin = 0;
+    file.close();
+  }
 }
 
 void test3() { system("cls"); }

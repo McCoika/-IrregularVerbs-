@@ -92,6 +92,8 @@ void test1() {
       file.close();
     }
   }
+  cout << "Нажмите любую клавишу чтобы выйти";
+  _getch();
 }
 
 void test2() {
@@ -153,6 +155,8 @@ void test2() {
     poin = 0;
     file.close();
   }
+  cout << "Нажмите любую клавишу чтобы выйти";
+  _getch();
 }
 
 void test3() { system("cls"); }

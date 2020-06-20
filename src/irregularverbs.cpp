@@ -46,11 +46,36 @@ void test1() {
         t = false;
     }
   }
-  file.open(path);
-  if (file.is_open())
-    cout << "1";
-  else
-    cout << "0";
+  cout << "¬вод производитс€ без зап€тых и с пробелом, с маленькой буквы."
+       << endl;
+  for (i = 0; i < 10; i++) {
+    file.open(path);
+    while (x <= nomera[i]) {
+      words = "";
+      getline(file, words);
+      x++;
+    }
+    x = 1;
+    j = 0;
+    while (words[j] != ' ') {
+      word += words[j];
+      j++;
+    }
+    cout << "¬ведите вторую и третью формы глагола " << word << ":" << endl;
+    cin >> answer;
+    word += ' ';
+    word += answer;
+    cin >> answer;
+    word += ' ';
+    word += answer;
+    if (word == words)
+      errors[vopr] = 1;
+    else
+      errors[vopr] = 0;
+    vopr++;
+    word = "";
+    file.close();
+  }
 }
 
 void test2() { system("cls"); }

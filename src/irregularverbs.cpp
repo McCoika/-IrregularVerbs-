@@ -286,6 +286,12 @@ void test3() {
         }
       }
       cout << endl;
+      for (int i = 0; i < 10; i++) {
+        if (mas[i][1] == mas[i][3])
+          cout << i + 1 << ".V\n";
+        else
+          cout << i + 1 << ".X\n";
+      }
       cout << "Нажмите любую клавишу чтобы выйти";
       _getch();
     }

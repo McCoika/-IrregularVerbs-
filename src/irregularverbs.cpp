@@ -196,7 +196,35 @@ void test2() {
   }
 }
 
-void test3() { system("cls"); }
+void test3() {
+  system("cls");
+  setlocale(LC_ALL, "ru");
+  srand(time(NULL));
+  cout << "¬ этом тесте вам нужно будет решить правильный или неправильный "
+          "перед вами глагол\n"
+          "‘ормат ответа: 1 - правильный глагол, 2 - неправильный глагол\n"
+          "1 - Ќачать тест\n2 - ¬ернутьс€ в меню\n";
+  bool close(false);
+  while (close == false) {
+      char m = _getch();
+      switch (m) {
+      case '1': {
+          string n_irverbs = "..\\txtfile\\dictionary.txt",
+              n_rverbs = "..\\txtfile\\regular_verbs.txt", words = "", word = "";
+          ifstream file;
+          int mas[10][3], x = 0;
+      }
+
+      case '2': {
+          close = true;
+          break;
+      }
+
+      default:
+          break;
+      }
+  }
+}
 
 int main() {
   bool close(false);

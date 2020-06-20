@@ -76,6 +76,21 @@ void test1() {
     word = "";
     file.close();
   }
+  for (i = 0; i < 10; i++) {
+    if (errors[i] == 1)
+      cout << i + 1 << ". V" << endl;
+    else {
+      file.open(path);
+      while (x <= nomera[i]) {
+        words = "";
+        getline(file, words);
+        x++;
+      }
+      x = 1;
+      cout << i + 1 << ". X   Правильный ответ: " << words << endl;
+      file.close();
+    }
+  }
 }
 
 void test2() { system("cls"); }

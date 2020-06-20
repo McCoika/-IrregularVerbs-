@@ -220,13 +220,79 @@ void test3() {
         else
           mas[i][2] = rand() % 138 + 1;
       }
+      for (int i = 0; i < 10; i++) {
+        if (mas[i][1] == 1) {
+          file.open(n_rverbs);
+          x = 0;
+          while (x <= mas[i][2]) {
+            words = "";
+            getline(file, words);
+            x++;
+          }
+          file.close();
+          cout << endl << i + 1 << '.' << words << "\n Введите ответ():";
+          bool close1(false);
+          while (close1 == false) {
+            char m1 = _getch();
+            switch (m1) {
+            case '1': {
+              mas[i][3] = 1;
+              close1 = true;
+              break;
+            }
+            case '2': {
+              mas[i][3] = 2;
+              close1 = true;
+              break;
+            }
+            default:
+              break;
+            }
+          }
+        } else {
+          file.open(n_irverbs);
+          x = 0;
+          while (x <= mas[i][2]) {
+            words = "";
+            getline(file, words);
+            x++;
+          }
+          file.close();
+          x = 0;
+          word = "";
+          while (words[x] != ' ') {
+            word += words[x];
+            x++;
+          }
+          cout << endl << i + 1 << '.' << word << "\n Введите ответ():";
+          bool close1(false);
+          while (close1 == false) {
+            char m1 = _getch();
+            switch (m1) {
+            case '1': {
+              mas[i][3] = 1;
+              close1 = true;
+              break;
+            }
+            case '2': {
+              mas[i][3] = 2;
+              close1 = true;
+              break;
+            }
+            default:
+              break;
+            }
+          }
+        }
+      }
+      cout << endl;
+      cout << "Нажмите любую клавишу чтобы выйти";
+      _getch();
     }
-
     case '2': {
       close = true;
       break;
     }
-
     default:
       break;
     }

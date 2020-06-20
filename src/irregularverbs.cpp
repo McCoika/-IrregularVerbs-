@@ -60,30 +60,32 @@ void test3() { system("cls"); }
 int main() {
   bool close(false);
   setlocale(LC_ALL, "Russian");
-  startmenu();
-  while (close == false) {
 
-    if (_kbhit()) {
-      switch (_getch()) {
-      case '1':
-        test1();
-        break;
-      case '2':
-        test2();
-        break;
-      case '3':
-        test3();
-        break;
-      case '4':
-        teorinf();
-        break;
-      case '5':
-        verbtable();
-        break;
-      case '6':
-        close = true;
-        break;
-      }
+  while (close == false) {
+    system("cls");
+    startmenu();
+    char m = _getch();
+    switch (m) {
+    case '1':
+      test1();
+      break;
+    case '2':
+      test2();
+      break;
+    case '3':
+      test3();
+      break;
+    case '4':
+      teorinf();
+      break;
+    case '5':
+      verbtable();
+      break;
+    case '6':
+      close = true;
+      break;
+    default:
+      break;
     }
   }
   return 0;

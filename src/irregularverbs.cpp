@@ -206,23 +206,30 @@ void test3() {
           "1 - Начать тест\n2 - Вернуться в меню\n";
   bool close(false);
   while (close == false) {
-      char m = _getch();
-      switch (m) {
-      case '1': {
-          string n_irverbs = "..\\txtfile\\dictionary.txt",
-              n_rverbs = "..\\txtfile\\regular_verbs.txt", words = "", word = "";
-          ifstream file;
-          int mas[10][3], x = 0;
+    char m = _getch();
+    switch (m) {
+    case '1': {
+      string n_irverbs = "..\\txtfile\\dictionary.txt",
+             n_rverbs = "..\\txtfile\\regular_verbs.txt", words = "", word = "";
+      ifstream file;
+      int mas[10][3], x = 0;
+      for (int i = 0; i < 10; i++) {
+        mas[i][1] = rand() % 2 + 1;
+        if (mas[i][1] == 1)
+          mas[i][2] = rand() % 109 + 1;
+        else
+          mas[i][2] = rand() % 138 + 1;
       }
+    }
 
-      case '2': {
-          close = true;
-          break;
-      }
+    case '2': {
+      close = true;
+      break;
+    }
 
-      default:
-          break;
-      }
+    default:
+      break;
+    }
   }
 }
 

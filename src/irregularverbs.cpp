@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <stdlib.h>
+#include <string>
 
 using namespace std;
 
@@ -27,7 +28,7 @@ void test1() {
 
   string path = "..\\txtfile\\dictionary.txt";
   string words, word, answer;
-  int nomera[10], i, x = 1, j, flag, errors[10], vopr = 0;
+  int nomera[10], i, x = 1, j, flag, errors[10], vopr = 0, button;
   bool t = true;
 
   ifstream file;
@@ -93,7 +94,34 @@ void test1() {
   }
 }
 
-void test2() { system("cls"); }
+void test2() {
+  system("cls");
+  system("cls");
+  setlocale(LC_ALL, "ru");
+  srand(time(NULL));
+
+  string path = "..\\txtfile\\dictionary.txt";
+  string words, word, answer;
+  int nomera[10], i, x = 1, j, flag, errors[10], vopr = 0, poin, button;
+  bool t = true;
+
+  ifstream file;
+  nomera[0] = rand() % 109 + 1;
+  for (i = 1; i < 10; i++) {
+    t = true;
+    while (t) {
+      flag = 0;
+      nomera[i] = rand() % 109 + 1;
+      for (j = 0; j < i; j++) {
+        if (nomera[i] == nomera[j])
+          flag++;
+      }
+
+      if (flag == 0)
+        t = false;
+    }
+  }
+}
 
 void test3() { system("cls"); }
 

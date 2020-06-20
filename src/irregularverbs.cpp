@@ -26,137 +26,174 @@ void test1() {
   setlocale(LC_ALL, "ru");
   srand(time(NULL));
 
-  string path = "..\\txtfile\\dictionary.txt";
-  string words, word, answer;
-  int nomera[10], i, x = 1, j, flag, errors[10], vopr = 0, button;
-  bool t = true;
+  cout << "В этом тесте вам нужно вписать первую и вторую форму неправильного "
+          "глагола, который выведется на экран.\n"
+          "Формат ответа: без запятых и с пробелом, с маленькой буквы.\n"
+          "1 - Начать тест\n2- Вернуться в меню";
 
-  ifstream file;
-  nomera[0] = rand() % 109 + 1;
-  for (i = 1; i < 10; i++) {
-    t = true;
-    while (t) {
-      flag = 0;
-      nomera[i] = rand() % 109 + 1;
-      for (j = 0; j < i; j++) {
-        if (nomera[i] == nomera[j])
-          flag++;
-      }
+  bool close(false);
+  while (close == false) {
+    char m = _getch();
+    switch (m) {
+    case '1': {
+      string path = "..\\txtfile\\dictionary.txt";
+      string words, word, answer;
+      int nomera[10], i, x = 1, j, flag, errors[10], vopr = 0, button;
+      bool t = true;
 
-      if (flag == 0)
-        t = false;
-    }
-  }
-  cout << "Ввод производится без запятых и с пробелом, с маленькой буквы."
-       << endl;
-  for (i = 0; i < 10; i++) {
-    file.open(path);
-    while (x <= nomera[i]) {
-      words = "";
-      getline(file, words);
-      x++;
-    }
-    x = 1;
-    j = 0;
-    while (words[j] != ' ') {
-      word += words[j];
-      j++;
-    }
-    cout << "Введите вторую и третью формы глагола " << word << ":" << endl;
-    cin >> answer;
-    word += ' ';
-    word += answer;
-    cin >> answer;
-    word += ' ';
-    word += answer;
-    if (word == words)
-      errors[vopr] = 1;
-    else
-      errors[vopr] = 0;
-    vopr++;
-    word = "";
-    file.close();
-  }
-  for (i = 0; i < 10; i++) {
-    if (errors[i] == 1)
-      cout << i + 1 << ". V" << endl;
-    else {
-      file.open(path);
-      while (x <= nomera[i]) {
-        words = "";
-        getline(file, words);
-        x++;
+      ifstream file;
+      nomera[0] = rand() % 109 + 1;
+      for (i = 1; i < 10; i++) {
+        t = true;
+        while (t) {
+          flag = 0;
+          nomera[i] = rand() % 109 + 1;
+          for (j = 0; j < i; j++) {
+            if (nomera[i] == nomera[j])
+              flag++;
+          }
+
+          if (flag == 0)
+            t = false;
+        }
       }
-      x = 1;
-      cout << i + 1 << ". X   Правильный ответ: " << words << endl;
-      file.close();
+      cout << endl;
+      for (i = 0; i < 10; i++) {
+        file.open(path);
+        while (x <= nomera[i]) {
+          words = "";
+          getline(file, words);
+          x++;
+        }
+        x = 1;
+        j = 0;
+        while (words[j] != ' ') {
+          word += words[j];
+          j++;
+        }
+        cout << "Введите вторую и третью формы глагола " << word << ":" << endl;
+        cin >> answer;
+        word += ' ';
+        word += answer;
+        cin >> answer;
+        word += ' ';
+        word += answer;
+        if (word == words)
+          errors[vopr] = 1;
+        else
+          errors[vopr] = 0;
+        vopr++;
+        word = "";
+        file.close();
+      }
+      for (i = 0; i < 10; i++) {
+        if (errors[i] == 1)
+          cout << i + 1 << ". V" << endl;
+        else {
+          file.open(path);
+          while (x <= nomera[i]) {
+            words = "";
+            getline(file, words);
+            x++;
+          }
+          x = 1;
+          cout << i + 1 << ". X   Правильный ответ: " << words << endl;
+          file.close();
+        }
+      }
+      cout << "Нажмите любую клавишу чтобы выйти";
+      _getch();
+    }
+    case '2': {
+      close = true;
+      break;
+    }
+    default:
+      break;
     }
   }
-  cout << "Нажмите любую клавишу чтобы выйти";
-  _getch();
 }
 
 void test2() {
   system("cls");
-  system("cls");
   setlocale(LC_ALL, "ru");
   srand(time(NULL));
 
-  string path = "..\\txtfile\\dictionary.txt";
-  string words, word, answer;
-  int nomera[10], i, x = 1, j, flag, errors[10], vopr = 0, poin, button;
-  bool t = true;
+  cout << "В этом тесте вам нужно вписать инфинитив для заданных первой и "
+          "второй формы неправильного "
+          "глагола.\n"
+          "Формат ответа: с маленькой буквы.\n"
+          "1 - Начать тест\n2- Вернуться в меню";
 
-  ifstream file;
-  nomera[0] = rand() % 109 + 1;
-  for (i = 1; i < 10; i++) {
-    t = true;
-    while (t) {
-      flag = 0;
-      nomera[i] = rand() % 109 + 1;
-      for (j = 0; j < i; j++) {
-        if (nomera[i] == nomera[j])
-          flag++;
+  bool close(false);
+  while (close == false) {
+    char m = _getch();
+    switch (m) {
+    case '1': {
+      string path = "..\\txtfile\\dictionary.txt";
+      string words, word, answer;
+      int nomera[10], i, x = 1, j, flag, errors[10], vopr = 0, poin, button;
+      bool t = true;
+
+      ifstream file;
+      nomera[0] = rand() % 109 + 1;
+      for (i = 1; i < 10; i++) {
+        t = true;
+        while (t) {
+          flag = 0;
+          nomera[i] = rand() % 109 + 1;
+          for (j = 0; j < i; j++) {
+            if (nomera[i] == nomera[j])
+              flag++;
+          }
+
+          if (flag == 0)
+            t = false;
+        }
       }
-
-      if (flag == 0)
-        t = false;
+      cout << "Ввод производится с маленькой буквы." << endl;
+      for (i = 0; i < 10; i++) {
+        file.open(path);
+        while (x <= nomera[i]) {
+          words = "";
+          getline(file, words);
+          x++;
+        }
+        x = 1;
+        j = 0;
+        while (words[j] != ' ') {
+          j++;
+        }
+        poin = j;
+        j++;
+        while (j <= words.length()) {
+          word += words[j];
+          j++;
+        }
+        cout << "Введите инфинитив глагола, который имеет данные формы: "
+             << word << endl;
+        cin >> answer;
+        words.erase(poin);
+        if (answer == words)
+          errors[vopr] = 1;
+        else
+          errors[vopr] = 0;
+        vopr++;
+        word = "";
+        poin = 0;
+        file.close();
+      }
+      cout << "Нажмите любую клавишу чтобы выйти";
+      _getch();
+    }
+    case '2': {
+      close = true;
+      break;
+    }
+    default:
+      break;
     }
   }
-  cout << "Ввод производится с маленькой буквы." << endl;
-  for (i = 0; i < 10; i++) {
-    file.open(path);
-    while (x <= nomera[i]) {
-      words = "";
-      getline(file, words);
-      x++;
-    }
-    x = 1;
-    j = 0;
-    while (words[j] != ' ') {
-      j++;
-    }
-    poin = j;
-    j++;
-    while (j <= words.length()) {
-      word += words[j];
-      j++;
-    }
-    cout << "Введите инфинитив глагола, который имеет данные формы: " << word
-         << endl;
-    cin >> answer;
-    words.erase(poin);
-    if (answer == words)
-      errors[vopr] = 1;
-    else
-      errors[vopr] = 0;
-    vopr++;
-    word = "";
-    poin = 0;
-    file.close();
-  }
-  cout << "Нажмите любую клавишу чтобы выйти";
-  _getch();
 }
 
 void test3() { system("cls"); }

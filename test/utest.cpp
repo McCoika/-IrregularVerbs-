@@ -45,3 +45,13 @@ TEST_CASE("Verifying numbers test3", "[checktest3]") {
   REQUIRE(a == result2);
   REQUIRE(b == result1);
 }
+
+TEST_CASE("Verifying numbers test3 ver.2", "[checktest3]") {
+  const char a = 'V';
+  const char b = 'X';
+  int num1 = 6, num2 = 3;
+  char result1 = checktest3(num1, num2);
+  char result2 = checktest3(num1, num1);
+  REQUIRE(a == result2);
+  REQUIRE(b == result1);
+}

@@ -17,7 +17,19 @@ void startmenu() {
   cout << "6 - Выход\n";
 }
 
-void teorinf() { system("cls"); }
+void teorinf() {
+  system("cls");
+  setlocale(LC_ALL, "ru");
+  string path = "..\\txtfile\\theory.txt";
+  ifstream file;
+  char sim;
+  file.open(path);
+  while (file.get(sim)) {
+    cout << sim;
+  }
+  cout << endl << endl << "Нажмите любую клавишу чтобы выйти";
+  _getch();
+}
 
 void verbtable() { system("cls"); }
 

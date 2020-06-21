@@ -164,10 +164,7 @@ void test2() {
              << word << endl;
         cin >> answer;
         words.erase(poin);
-        if (answer == words)
-          errors[vopr] = 1;
-        else
-          errors[vopr] = 0;
+        check(answer, words, errors, vopr);
         vopr++;
         word = "";
         poin = 0;

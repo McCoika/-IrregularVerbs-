@@ -1,7 +1,7 @@
 #ifndef TEST_H
 #define TEST_H
-#include <string.h>
 #include <iostream>
+#include <string.h>
 
 using namespace std;
 void test1();

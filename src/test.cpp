@@ -14,6 +14,13 @@ void check(string word, string words, int errors[10], int vopr) {
     errors[vopr] = 0;
 }
 
+const char checktest3(int a, int b) {
+  if (a == b)
+    return ('V');
+  else
+    return ('X');
+}
+
 void test1() {
   system("cls");
   setlocale(LC_ALL, "ru");
@@ -288,13 +295,9 @@ void test3() {
         }
       }
       cout << endl;
-      for (int i = 0; i < 10; i++) {
-        if (mas[i][1] == mas[i][3])
-          cout << i + 1 << ".V\n";
-        else
-          cout << i + 1 << ".X\n";
-      }
-      cout << "Нажмите любую клавишу чтобы выйти";
+      for (int i = 0; i < 10; i++)
+        cout << i + 1 << '.' << checktest3(mas[i][1], mas[i][3]) << endl;
+      cout << "\nНажмите любую клавишу чтобы выйти";
       _getch();
     }
     case '2': {

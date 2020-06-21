@@ -31,7 +31,20 @@ void teorinf() {
   _getch();
 }
 
-void verbtable() { system("cls"); }
+void verbtable() {
+  system("cls");
+  setlocale(LC_ALL, "ru");
+  string slova, path = "..\\txtfile\\dictionary.txt";
+  ifstream file;
+  file.open(path);
+  while (!file.eof()) {
+    slova = "";
+    getline(file, slova);
+    cout << slova << endl << "--------------------------------" << endl;
+  }
+  cout << endl << endl << "Нажмите любую клавишу чтобы выйти";
+  _getch();
+}
 
 void test1() {
   system("cls");

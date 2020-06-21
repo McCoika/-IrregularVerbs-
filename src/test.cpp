@@ -7,6 +7,13 @@
 
 using namespace std;
 
+void check(string word, string words, int errors[10], int vopr) {
+  if (word == words)
+    errors[vopr] = 1;
+  else
+    errors[vopr] = 0;
+}
+
 void test1() {
   system("cls");
   setlocale(LC_ALL, "ru");
@@ -64,10 +71,7 @@ void test1() {
         cin >> answer;
         word += ' ';
         word += answer;
-        if (word == words)
-          errors[vopr] = 1;
-        else
-          errors[vopr] = 0;
+        check(word, words, errors, vopr);
         vopr++;
         word = "";
         file.close();

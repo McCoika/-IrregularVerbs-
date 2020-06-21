@@ -9,6 +9,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
+
 TEST_CASE("Verifying words", "[check]") {
   const int a = 1;
   const int b = 0;
@@ -21,6 +22,7 @@ TEST_CASE("Verifying words", "[check]") {
   REQUIRE(a == errors[0]);
   REQUIRE(b == errors[1]);
 }
+
 TEST_CASE("Verifying words ver.2", "[check]") {
   const int a = 1;
   const int b = 0;
@@ -32,4 +34,14 @@ TEST_CASE("Verifying words ver.2", "[check]") {
   check(word1, words1, errors, vopr);
   REQUIRE(a == errors[0]);
   REQUIRE(b == errors[1]);
+}
+
+TEST_CASE("Verifying numbers test3", "[checktest3]") {
+  const char a = 'V';
+  const char b = 'X';
+  int num1 = 1, num2 = 2;
+  char result1 = checktest3(num1, num2);
+  char result2 = checktest3(num1, num1);
+  REQUIRE(a == result2);
+  REQUIRE(b == result1);
 }

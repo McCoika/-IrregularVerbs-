@@ -13,9 +13,11 @@ void check(string word, string words, int errors[10], int vopr) {
     errors[vopr] = 0;
 }
 
-void randommas(int nomera[10], int i, int j, int *flag) {
+int randommas(int nomera[10], int i, int j) {
   if (nomera[i] == nomera[j])
-    flag++;
+    return 1;
+  else
+    return 0;
 }
 
 int randommascheck(int flag) {
@@ -60,7 +62,7 @@ void test1() {
           flag = 0;
           nomera[i] = rand() % 109 + 1;
           for (j = 0; j < i; j++) {
-            randommas(nomera, i, j, &flag);
+            flag += randommas(nomera, i, j);
           }
           t = randommascheck(flag);
         }
@@ -149,7 +151,7 @@ void test2() {
           flag = 0;
           nomera[i] = rand() % 109 + 1;
           for (j = 0; j < i; j++) {
-            randommas(nomera, i, j, &flag);
+            flag += randommas(nomera, i, j);
           }
           t = randommascheck(flag);
         }

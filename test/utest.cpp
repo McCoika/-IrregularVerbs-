@@ -44,3 +44,14 @@ TEST_CASE("Verifying mas elements", "[randommas]") {
   REQUIRE(a == flag);
   REQUIRE(b == flag1);
 }
+
+TEST_CASE("Verifying flag", "[randommascheck]") {
+  const int a = 1;
+  const int b = 0;
+  int flag = 0, t, t1;
+  t = randommascheck(flag);
+  flag++;
+  t1 = randommascheck(flag);
+  REQUIRE(b == t);
+  REQUIRE(a == t1);
+}

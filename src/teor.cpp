@@ -1,4 +1,3 @@
-#include <conio.h>
 #include <ctime>
 #include <fstream>
 #include <iostream>
@@ -17,8 +16,9 @@ void teorinf() {
   while (file.get(sim)) {
     cout << sim;
   }
-  cout << endl << endl << "Нажмите любую клавишу чтобы выйти";
-  _getch();
+  cout << endl << endl << "Нажмите любую клавишу чтобы выйти\n";
+  char a;
+  cin >> a;
 }
 
 void verbtable() {
@@ -32,6 +32,7 @@ void verbtable() {
     getline(file, slova);
     cout << slova << endl << "--------------------------------" << endl;
   }
-  cout << endl << endl << "Нажмите любую клавишу чтобы выйти";
-  _getch();
+  cout << endl << endl << "Введите любую клавишу чтобы выйти\n";
+  char a;
+  cin >> a;
 }

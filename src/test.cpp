@@ -1,4 +1,3 @@
-#include <conio.h>
 #include <ctime>
 #include <fstream>
 #include <iostream>
@@ -29,11 +28,11 @@ void test1() {
   cout << "В этом тесте вам нужно вписать первую и вторую форму неправильного "
           "глагола, который выведется на экран.\n"
           "Формат ответа: без запятых и с пробелом, с маленькой буквы.\n"
-          "1 - Начать тест\n2- Вернуться в меню";
+          "1 - Начать тест\n2- Вернуться в меню\n";
 
   bool close(false);
   while (close == false) {
-    char m = _getch();
+    char m = getchar();
     switch (m) {
     case '1': {
       string path = "..\\txtfile\\dictionary.txt";
@@ -98,8 +97,9 @@ void test1() {
           file.close();
         }
       }
-      cout << "Нажмите любую клавишу чтобы выйти";
-      _getch();
+      cout << "Введите любую клавишу чтобы выйти\n";
+      char a;
+      cin >> a;
     }
     case '2': {
       close = true;
@@ -120,11 +120,11 @@ void test2() {
           "второй формы неправильного "
           "глагола.\n"
           "Формат ответа: с маленькой буквы.\n"
-          "1 - Начать тест\n2- Вернуться в меню";
+          "1 - Начать тест\n2- Вернуться в меню\n";
 
   bool close(false);
   while (close == false) {
-    char m = _getch();
+    char m = getchar();
     switch (m) {
     case '1': {
       string path = "..\\txtfile\\dictionary.txt";
@@ -192,8 +192,9 @@ void test2() {
           file.close();
         }
       }
-      cout << "Нажмите любую клавишу чтобы выйти";
-      _getch();
+      cout << "Введите любую клавишу чтобы выйти\n";
+      char a;
+      cin >> a;
     }
     case '2': {
       close = true;
@@ -215,7 +216,7 @@ void test3() {
           "1 - Начать тест\n2 - Вернуться в меню\n";
   bool close(false);
   while (close == false) {
-    char m = _getch();
+    char m = getchar();
     switch (m) {
     case '1': {
       string n_irverbs = "..\\txtfile\\dictionary.txt",
@@ -242,7 +243,7 @@ void test3() {
           cout << endl << i + 1 << '.' << words << "\n Введите ответ():";
           bool close1(false);
           while (close1 == false) {
-            char m1 = _getch();
+            char m1 = getchar();
             switch (m1) {
             case '1': {
               mas[i][3] = 1;
@@ -276,7 +277,7 @@ void test3() {
           cout << endl << i + 1 << '.' << word << "\n Введите ответ():";
           bool close1(false);
           while (close1 == false) {
-            char m1 = _getch();
+            char m1 = getchar();
             switch (m1) {
             case '1': {
               mas[i][3] = 1;
@@ -297,8 +298,9 @@ void test3() {
       cout << endl;
       for (int i = 0; i < 10; i++)
         cout << i + 1 << '.' << checktest3(mas[i][1], mas[i][3]) << endl;
-      cout << "\nНажмите любую клавишу чтобы выйти";
-      _getch();
+      cout << "\nВведите любую клавишу чтобы выйти\n";
+      char a;
+      cin >> a;
     }
     case '2': {
       close = true;

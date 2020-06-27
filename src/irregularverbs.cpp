@@ -1,7 +1,6 @@
 #include "startmenu.hpp"
 #include "teor.hpp"
 #include "test.hpp"
-#include <conio.h>
 #include <ctime>
 #include <fstream>
 #include <iostream>
@@ -18,7 +17,7 @@ int main() {
   while (close == false) {
     system("cls");
     startmenu();
-    char m = _getch();
+    char m = getchar();
     switch (m) {
     case '1':
       test1();

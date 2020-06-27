@@ -13,6 +13,18 @@ void check(string word, string words, int errors[10], int vopr) {
     errors[vopr] = 0;
 }
 
+void randommas(int nomera[10], int i, int j, int *flag) {
+  if (nomera[i] == nomera[j])
+    flag++;
+}
+
+int randommascheck(int flag) {
+  if (flag == 0)
+    return 0;
+  else
+    return 1;
+}
+
 const char checktest3(int a, int b) {
   if (a == b)
     return ('V');
@@ -48,12 +60,9 @@ void test1() {
           flag = 0;
           nomera[i] = rand() % 109 + 1;
           for (j = 0; j < i; j++) {
-            if (nomera[i] == nomera[j])
-              flag++;
+            randommas(nomera, i, j, &flag);
           }
-
-          if (flag == 0)
-            t = false;
+          t = randommascheck(flag);
         }
       }
       cout << endl;
@@ -140,12 +149,9 @@ void test2() {
           flag = 0;
           nomera[i] = rand() % 109 + 1;
           for (j = 0; j < i; j++) {
-            if (nomera[i] == nomera[j])
-              flag++;
+            randommas(nomera, i, j, &flag);
           }
-
-          if (flag == 0)
-            t = false;
+          t = randommascheck(flag);
         }
       }
       cout << endl;

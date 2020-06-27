@@ -3,7 +3,6 @@
 #include "../src/teor.hpp"
 #include "../src/test.hpp"
 #include "../thirdparty/catch.hpp"
-#include <conio.h>
 #include <ctime>
 #include <fstream>
 #include <iostream>

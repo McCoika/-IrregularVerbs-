@@ -240,25 +240,8 @@ void test3() {
             x++;
           }
           file.close();
-          cout << endl << i + 1 << '.' << words << "\n ¬ведите ответ():";
-          bool close1(false);
-          while (close1 == false) {
-            char m1 = getchar();
-            switch (m1) {
-            case '1': {
-              mas[i][3] = 1;
-              close1 = true;
-              break;
-            }
-            case '2': {
-              mas[i][3] = 2;
-              close1 = true;
-              break;
-            }
-            default:
-              break;
-            }
-          }
+          cout << endl << i + 1 << '.' << words << "\n ¬ведите ответ:";
+          cin >> mas[i][3];
         } else {
           file.open(n_irverbs);
           x = 0;
@@ -274,25 +257,8 @@ void test3() {
             word += words[x];
             x++;
           }
-          cout << endl << i + 1 << '.' << word << "\n ¬ведите ответ():";
-          bool close1(false);
-          while (close1 == false) {
-            char m1 = getchar();
-            switch (m1) {
-            case '1': {
-              mas[i][3] = 1;
-              close1 = true;
-              break;
-            }
-            case '2': {
-              mas[i][3] = 2;
-              close1 = true;
-              break;
-            }
-            default:
-              break;
-            }
-          }
+          cout << endl << i + 1 << '.' << word << "\n ¬ведите ответ:";
+          cin >> mas[i][3];
         }
       }
       cout << endl;
